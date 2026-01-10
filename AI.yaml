@@ -1,0 +1,156 @@
+rules:
+- domain_suffix:
+    name: Gemini
+    match: gemini.google.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: Gemini
+    match: bard.google.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: Gemini
+    match: deepmind.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: Gemini
+    match: deepmind.google
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: Gemini
+    match: generativelanguage.googleapis.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain:
+    name: Gemini
+    match: proactivebackend-pa.googleapis.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain:
+    name: Gemini
+    match: chat-pa.clients6.google.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain:
+    name: Gemini
+    match: gemini-pa.googleapis.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: Gemini
+    match: aistudio.google.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: Gemini
+    match: makersuite.google.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain:
+    name: Gemini
+    match: alkalimakersuite-pa.clients6.google.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: Gemini
+    match: aiplatform.googleapis.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: chatgpt.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: openai.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: oaistatic.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: oaiusercontent.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: chat.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: chatgpt.livekit.cloud
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: host.livekit.cloud
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: turn.livekit.cloud
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: auth0.openai.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: client-api.arkoselabs.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: featuregates.org
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: statsigapi.net
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: identrust.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: openaiapi-site.azureedge.net
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: sora.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: searchgpt.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain:
+    name: ChatGPT
+    match: accounts.google.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: googleusercontent.com
+    policy: 谷歌油管优选
+    disabled: false
+- domain_suffix:
+    name: ChatGPT
+    match: gstatic.com
+    policy: 谷歌油管优选
+    disabled: false
