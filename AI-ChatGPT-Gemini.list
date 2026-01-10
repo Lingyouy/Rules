@@ -1,0 +1,33 @@
+# =========================
+# OpenAI / ChatGPT
+# =========================
+
+# 主站 & Web
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+
+# API
+DOMAIN,api.openai.com
+DOMAIN,api.chatgpt.com
+
+# 登录 / 鉴权
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,openai.auth0.com
+
+# 静态资源 & 前端
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+
+# 图片 & 文件
+DOMAIN-SUFFIX,openaiusercontent.com
+
+# CDN
+DOMAIN-SUFFIX,cloudflare.com
+
+# iOS / Android App
+DOMAIN,ios.chat.openai.com
+DOMAIN,android.chat.openai.com
+
+# 语音 & 实时
+DOMAIN,realtime.openai.com
+DOMAIN-SUFFIX,openai-cdn.com
