@@ -1,33 +1,59 @@
+# ==================================================
+# AI Services - ChatGPT + Gemini (Anti-DEFAULT)
+# ==================================================
+
 # =========================
 # OpenAI / ChatGPT
 # =========================
 
 # 主站 & Web
-DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,openai.com
+
+# WebSocket / 实时（极易兜底）
+DOMAIN,ws.chatgpt.com
+DOMAIN,realtime.openai.com
 
 # API
 DOMAIN,api.openai.com
 DOMAIN,api.chatgpt.com
 
-# 登录 / 鉴权
-DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,openai.auth0.com
-
-# 静态资源 & 前端
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,oaiusercontent.com
-
-# 图片 & 文件
-DOMAIN-SUFFIX,openaiusercontent.com
-
-# CDN
-DOMAIN-SUFFIX,cloudflare.com
-
-# iOS / Android App
+# App
 DOMAIN,ios.chat.openai.com
 DOMAIN,android.chat.openai.com
 
-# 语音 & 实时
-DOMAIN,realtime.openai.com
+# 静态资源 / CDN（不全必漏）
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,openaiusercontent.com
 DOMAIN-SUFFIX,openai-cdn.com
+
+
+# =========================
+# Google Gemini / Google AI
+# =========================
+
+# Gemini 主站
+DOMAIN-SUFFIX,gemini.google.com
+
+# Google AI / MakerSuite
+DOMAIN-SUFFIX,ai.google
+DOMAIN-SUFFIX,makersuite.google.com
+
+# API（核心）
+DOMAIN,generativelanguage.googleapis.com
+DOMAIN,ai.googleapis.com
+
+# 登录 / 鉴权（不走代理=直接失败）
+DOMAIN-SUFFIX,accounts.google.com
+
+# 前端资源
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,gstatic.com
+
+# Firebase / 内部服务
+DOMAIN-SUFFIX,firebaseapp.com
+DOMAIN-SUFFIX,firebaseio.com
+
+# 通用 Google API（Gemini 必需子集）
+DOMAIN-SUFFIX,googleapis.com
