@@ -30,7 +30,7 @@ DOMAIN-SUFFIX,openai-cdn.com
 
 
 # =========================
-# Google Gemini / Google AI
+# Google Gemini (FULL / VIF SAFE)
 # =========================
 
 # Gemini 主站
@@ -40,20 +40,29 @@ DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,ai.google
 DOMAIN-SUFFIX,makersuite.google.com
 
-# API（核心）
-DOMAIN,generativelanguage.googleapis.com
+# 核心 API
 DOMAIN,ai.googleapis.com
+DOMAIN,generativelanguage.googleapis.com
+DOMAIN,www.googleapis.com
 
-# 登录 / 鉴权（不走代理=直接失败）
-DOMAIN-SUFFIX,accounts.google.com
+# 登录 / 鉴权（极关键）
+DOMAIN,accounts.google.com
+DOMAIN,oauth2.googleapis.com
+DOMAIN,securetoken.googleapis.com
+DOMAIN,identitytoolkit.googleapis.com
 
 # 前端资源
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,gstatic.com
 
+# 网络检测 / 客户端判定
+DOMAIN,clients6.google.com
+DOMAIN,connectivitycheck.gstatic.com
+DOMAIN,mtalk.google.com
+
 # Firebase / 内部服务
 DOMAIN-SUFFIX,firebaseapp.com
 DOMAIN-SUFFIX,firebaseio.com
 
-# 通用 Google API（Gemini 必需子集）
+# 通用 Google API（必须兜住）
 DOMAIN-SUFFIX,googleapis.com
