@@ -1,29 +1,29 @@
 # ===== YouTube Core =====
-DOMAIN-SUFFIX,youtube.com,YouTube
-DOMAIN-SUFFIX,youtube.co,YouTube
-DOMAIN-SUFFIX,youtu.be,YouTube
-DOMAIN-SUFFIX,yt.be,YouTube
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,youtube.co
+DOMAIN-SUFFIX,youtu.be
+DOMAIN-SUFFIX,yt.be
 
 # ===== YouTube Music =====
-DOMAIN,music.youtube.com,YouTube
+DOMAIN,music.youtube.com
 
 # ===== Streaming CDN =====
-DOMAIN-SUFFIX,googlevideo.com,YouTube
-DOMAIN-SUFFIX,ytimg.com,YouTube
-DOMAIN-SUFFIX,ggpht.com,YouTube
-DOMAIN-SUFFIX,googleusercontent.com,YouTube
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,googleusercontent.com
 
 # ===== YouTube / Music API (CRITICAL) =====
-DOMAIN-SUFFIX,youtubei.googleapis.com,YouTube
-DOMAIN-SUFFIX,youtube.googleapis.com,YouTube
-DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com,YouTube
-DOMAIN-SUFFIX,youtubemusic.googleapis.com,YouTube
-DOMAIN-SUFFIX,play.googleapis.com,YouTube
+DOMAIN-SUFFIX,youtubei.googleapis.com
+DOMAIN-SUFFIX,youtube.googleapis.com
+DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com
+DOMAIN-SUFFIX,youtubemusic.googleapis.com
+DOMAIN-SUFFIX,play.googleapis.com
 
 # ===== Google Core APIs (ORDER SENSITIVE) =====
-DOMAIN-SUFFIX,googleapis.com,YouTube
+DOMAIN-SUFFIX,googleapis.com
 
 # ===== Others =====
-DOMAIN-SUFFIX,youtubekids.com,YouTube
-DOMAIN-SUFFIX,youtubestudio.com,YouTube
-DOMAIN-SUFFIX,yt3.ggpht.com,YouTube
+DOMAIN-SUFFIX,youtubekids.com
+DOMAIN-SUFFIX,youtubestudio.com
+DOMAIN-SUFFIX,yt3.ggpht.com
