@@ -1,0 +1,26 @@
+# ===== YouTube Core =====
+DOMAIN-SUFFIX,youtube.com,YouTube
+DOMAIN-SUFFIX,youtube.co,YouTube
+DOMAIN-SUFFIX,youtu.be,YouTube
+DOMAIN-SUFFIX,yt.be,YouTube
+
+# ===== YouTube Music =====
+DOMAIN,music.youtube.com,YouTube
+
+# ===== YouTube API / Data =====
+DOMAIN-SUFFIX,googlevideo.com,YouTube
+DOMAIN-SUFFIX,ytimg.com,YouTube
+DOMAIN-SUFFIX,ggpht.com,YouTube
+DOMAIN-SUFFIX,youtubei.googleapis.com,YouTube
+DOMAIN-SUFFIX,youtube.googleapis.com,YouTube
+DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com,YouTube
+DOMAIN-SUFFIX,youtubeanalytics.googleapis.com,YouTube
+DOMAIN-SUFFIX,youtubekids.com,YouTube
+
+# ===== Player / Streaming =====
+DOMAIN-SUFFIX,googleapis.com,YouTube
+DOMAIN-SUFFIX,googleusercontent.com,YouTube
+
+# ===== Shorts / Studio =====
+DOMAIN-SUFFIX,youtubestudio.com,YouTube
+DOMAIN-SUFFIX,yt3.ggpht.com,YouTube
