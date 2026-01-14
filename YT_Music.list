@@ -7,20 +7,23 @@ DOMAIN-SUFFIX,yt.be,YouTube
 # ===== YouTube Music =====
 DOMAIN,music.youtube.com,YouTube
 
-# ===== YouTube API / Data =====
+# ===== Streaming CDN =====
 DOMAIN-SUFFIX,googlevideo.com,YouTube
 DOMAIN-SUFFIX,ytimg.com,YouTube
 DOMAIN-SUFFIX,ggpht.com,YouTube
+DOMAIN-SUFFIX,googleusercontent.com,YouTube
+
+# ===== YouTube / Music API (CRITICAL) =====
 DOMAIN-SUFFIX,youtubei.googleapis.com,YouTube
 DOMAIN-SUFFIX,youtube.googleapis.com,YouTube
 DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com,YouTube
-DOMAIN-SUFFIX,youtubeanalytics.googleapis.com,YouTube
-DOMAIN-SUFFIX,youtubekids.com,YouTube
+DOMAIN-SUFFIX,youtubemusic.googleapis.com,YouTube
+DOMAIN-SUFFIX,play.googleapis.com,YouTube
 
-# ===== Player / Streaming =====
+# ===== Google Core APIs (ORDER SENSITIVE) =====
 DOMAIN-SUFFIX,googleapis.com,YouTube
-DOMAIN-SUFFIX,googleusercontent.com,YouTube
 
-# ===== Shorts / Studio =====
+# ===== Others =====
+DOMAIN-SUFFIX,youtubekids.com,YouTube
 DOMAIN-SUFFIX,youtubestudio.com,YouTube
 DOMAIN-SUFFIX,yt3.ggpht.com,YouTube
