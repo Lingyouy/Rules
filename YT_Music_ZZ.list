@@ -1,0 +1,11 @@
+DOMAIN-REGEX,(^|\.)youtube\.com$,YouTube
+DOMAIN-REGEX,(^|\.)youtu\.be$,YouTube
+DOMAIN-REGEX,(^|\.)googlevideo\.com$,YouTube
+DOMAIN-REGEX,(^|\.)ytimg\.com$,YouTube
+DOMAIN-REGEX,(^|\.)ggpht\.com$,YouTube
+DOMAIN-REGEX,(^|\.)youtubekids\.com$,YouTube
+DOMAIN-REGEX,(^|\.)youtubestudio\.com$,YouTube
+DOMAIN-REGEX,(^|\.)youtubei\.googleapis\.com$,YouTube
+DOMAIN-REGEX,(^|\.)youtube\.googleapis\.com$,YouTube
+DOMAIN-REGEX,(^|\.)googleapis\.com$,YouTube
+DOMAIN-REGEX,(^|\.)googleusercontent\.com$,YouTube
