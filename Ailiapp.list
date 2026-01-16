@@ -1,0 +1,131 @@
+# ==================================================
+# Alibaba Ecosystem - ULTIMATE FULL RULESET
+# 阿里 / 淘系 / 蚂蚁 / 办公 / 网盘 / 浏览器 全量终极规则
+#
+# 覆盖：
+# - 淘宝 / 天猫 / 1688 / 千牛
+# - 支付宝 / 蚂蚁集团 / 蚂蚁阿福
+# - 饿了么 / 本地生活
+# - 夸克 / UC
+# - 夸克网盘 / 阿里云盘
+# - 钉钉 / 企业办公 / 商家后台
+# - 菜鸟 / 飞猪 / 高德 / 文娱
+# - 阿里云 / CDN / 基础设施
+#
+# 建议策略：DIRECT（国内直连）
+# ==================================================
+
+# ===== 淘宝 / 天猫 / 商家 =====
+DOMAIN-SUFFIX,taobao.com
+DOMAIN-SUFFIX,tb.cn
+DOMAIN-SUFFIX,tburl.cn
+DOMAIN-SUFFIX,taobao.net
+DOMAIN-SUFFIX,taobao.org
+DOMAIN-SUFFIX,taobaocdn.com
+DOMAIN-SUFFIX,tmall.com
+DOMAIN-SUFFIX,tmall.hk
+DOMAIN-SUFFIX,tmallglobal.com
+DOMAIN-SUFFIX,tmall.com.hk
+
+# ===== 1688 / 千牛 / 商家后台 =====
+DOMAIN-SUFFIX,1688.com
+DOMAIN-SUFFIX,alibaba.cn
+DOMAIN-SUFFIX,qianniu.com
+DOMAIN-SUFFIX,qncdn.com
+DOMAIN-SUFFIX,work.taobao.com
+
+# ===== 阿里巴巴集团主域 =====
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,alibaba-inc.com
+DOMAIN-SUFFIX,alibaba.net
+DOMAIN-SUFFIX,alibabausercontent.com
+
+# ===== 蚂蚁集团 / 支付宝 / 阿福 =====
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipay.net
+DOMAIN-SUFFIX,alipaydns.com
+DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,mybank.cn
+DOMAIN-SUFFIX,antgroup.com
+DOMAIN-SUFFIX,antfin.com
+DOMAIN-SUFFIX,antcloud.com
+DOMAIN-SUFFIX,antfortune.com
+
+# ===== 饿了么 / 本地生活 =====
+DOMAIN-SUFFIX,ele.me
+DOMAIN-SUFFIX,eleme.io
+DOMAIN-SUFFIX,eleme.cn
+DOMAIN-SUFFIX,eleme.net
+DOMAIN-SUFFIX,elemecdn.com
+DOMAIN-SUFFIX,elemeimg.com
+DOMAIN-SUFFIX,koubei.com
+
+# ===== 钉钉 / 企业办公 =====
+DOMAIN-SUFFIX,dingtalk.com
+DOMAIN-SUFFIX,dingding.com
+DOMAIN-SUFFIX,dtapp.net
+DOMAIN-SUFFIX,dingtalkapps.com
+DOMAIN-SUFFIX,aliwork.com
+
+# ===== 阿里办公 / 协同 / 内部工具 =====
+DOMAIN-SUFFIX,aliyunoffice.com
+DOMAIN-SUFFIX,alioffice.com
+DOMAIN-SUFFIX,alibabaoffice.com
+
+# ===== 夸克 / UC =====
+DOMAIN-SUFFIX,quark.cn
+DOMAIN-SUFFIX,quarksm.cn
+DOMAIN-SUFFIX,uc.cn
+DOMAIN-SUFFIX,ucweb.com
+
+# ===== 夸克网盘 =====
+DOMAIN-SUFFIX,quarkcloud.com
+DOMAIN-SUFFIX,quarkdrive.com
+
+# ===== 阿里云盘 =====
+DOMAIN-SUFFIX,aliyundrive.com
+DOMAIN-SUFFIX,aliyundrive.net
+DOMAIN-SUFFIX,aliyunpan.com
+
+# ===== 高德 =====
+DOMAIN-SUFFIX,amap.com
+DOMAIN-SUFFIX,autonavi.com
+
+# ===== 菜鸟 / 物流 =====
+DOMAIN-SUFFIX,cainiao.com
+DOMAIN-SUFFIX,cainiao.com.cn
+
+# ===== 飞猪 / 旅行 =====
+DOMAIN-SUFFIX,alitrip.com
+DOMAIN-SUFFIX,fliggy.com
+
+# ===== 阿里健康 =====
+DOMAIN-SUFFIX,alihealth.cn
+DOMAIN-SUFFIX,alihealth.com.cn
+
+# ===== 文娱 =====
+DOMAIN-SUFFIX,youku.com
+DOMAIN-SUFFIX,tudou.com
+DOMAIN-SUFFIX,alibaba-pictures.com
+
+# ===== 阿里云 / 基础设施 =====
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,aliyuncs.com
+DOMAIN-SUFFIX,aliyun-inc.com
+
+# ===== CDN / 图片 / 静态 =====
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,aliimg.com
+
+# ===== 日志 / SDK / 通用能力 =====
+DOMAIN-SUFFIX,mmstat.com
+DOMAIN-SUFFIX,aliapp.org
+
+# ===== 海外 / 历史 / 隐性 =====
+DOMAIN-SUFFIX,aliexpress.com
+DOMAIN-SUFFIX,lazada.com
+DOMAIN-SUFFIX,daraz.com
+DOMAIN-SUFFIX,trendyol.com
+DOMAIN-SUFFIX,etao.com
+DOMAIN-SUFFIX,xiami.com
+DOMAIN-SUFFIX,kanbox.com
