@@ -1,0 +1,51 @@
+# ByteDance Domestic Ecosystem Rules - 修正版
+# 国内服务，去掉网易等无关域名
+
+# ===== 抖音 / 短视频 =====
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,iesdouyin.com
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,bytecdn.cn
+DOMAIN-SUFFIX,snssdk.cn
+
+# ===== 今日头条 / 新闻资讯 =====
+DOMAIN-SUFFIX,toutiao.com
+DOMAIN-SUFFIX,jinriapp.com
+DOMAIN-SUFFIX,ttcdn.com
+DOMAIN-SUFFIX,byteimg.com
+
+# ===== 西瓜视频 / 火山视频 / 直播 =====
+DOMAIN-SUFFIX,xigua.com
+DOMAIN-SUFFIX,ixigua.com
+DOMAIN-SUFFIX,huoshan.com
+DOMAIN-SUFFIX,volcengine.com
+DOMAIN-SUFFIX,volcengineapi.com
+
+# ===== 飞书 / 企业办公（国内版） =====
+DOMAIN-SUFFIX,feishu.cn
+DOMAIN-SUFFIX,feishuapp.com
+
+# ===== 小众 / 辅助工具 =====
+DOMAIN-SUFFIX,pipix.com
+DOMAIN-SUFFIX,capcut.cn
+DOMAIN-SUFFIX,jianying.com
+DOMAIN-SUFFIX,faceu.com
+DOMAIN-SUFFIX,vigo.tv
+DOMAIN-SUFFIX,byteads.com
+DOMAIN-SUFFIX,ad.bytedance.com
+DOMAIN-SUFFIX,pangolin-sdk.com
+
+# ===== 广告 / 推送 / SDK / 数据 =====
+DOMAIN-SUFFIX,ad.toutiao.com
+DOMAIN-SUFFIX,analytics.toutiao.com
+DOMAIN-SUFFIX,log.bytedance.com
+DOMAIN-SUFFIX,sdk.bytedance.com
+DOMAIN-SUFFIX,umeng.com
+
+# ===== 云 / 基础设施 / CDN =====
+DOMAIN-SUFFIX,bytecdn.cn
+DOMAIN-SUFFIX,volcengineapi.com
+DOMAIN-SUFFIX,bytedancecloud.com
+DOMAIN-SUFFIX,bytecloud.com
+DOMAIN-SUFFIX,bytedance.net
