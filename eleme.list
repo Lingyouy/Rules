@@ -1,0 +1,29 @@
+# ==================================================
+# Ele.me 纯净分流规则（仅饿了么）
+# 不包含：淘宝 / 支付宝 / 1688
+# 适用于：Egern / Loon / Clash / Surge
+# 策略建议：DIRECT（国内直连）
+# ==================================================
+
+# ===== 饿了么核心 =====
+DOMAIN-SUFFIX,ele.me
+DOMAIN-SUFFIX,eleme.io
+
+# ===== 饿了么 App / 接口 =====
+DOMAIN-SUFFIX,m.ele.me
+DOMAIN-SUFFIX,h5.ele.me
+DOMAIN-SUFFIX,api.ele.me
+DOMAIN-SUFFIX,restapi.ele.me
+DOMAIN-SUFFIX,router.ele.me
+
+# ===== 静态资源 / 图片 =====
+DOMAIN-SUFFIX,elemecdn.com
+DOMAIN-SUFFIX,elemeimg.com
+
+# ===== 推送 / 日志 / 风控 =====
+DOMAIN-SUFFIX,eleme.cn
+DOMAIN-SUFFIX,eleme.net
+
+# ===== 必要基础设施（饿了么依赖）=====
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,aliyuncs.com
