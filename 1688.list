@@ -1,0 +1,40 @@
+# ==================================================
+# 1688 / Alibaba China 全量合并分流规则
+# 适用于：Egern / Loon / Clash / Surge
+# 策略建议：DIRECT（直连 / 国内）
+# ==================================================
+
+# ===== 1688 核心 =====
+DOMAIN-SUFFIX,1688.com
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,alibaba.cn
+DOMAIN-SUFFIX,alibaba-inc.com
+DOMAIN-SUFFIX,alibaba.net
+
+# ===== 1688 App / 无线端 =====
+DOMAIN-SUFFIX,m.1688.com
+DOMAIN-SUFFIX,gw.1688.com
+DOMAIN-SUFFIX,api.1688.com
+DOMAIN-SUFFIX,acs.m.1688.com
+DOMAIN-SUFFIX,h5api.m.1688.com
+
+# ===== 静态资源 / CDN =====
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,aliimg.com
+DOMAIN-SUFFIX,alibabausercontent.com
+DOMAIN-SUFFIX,mmstat.com
+DOMAIN-SUFFIX,taobaocdn.com
+
+# ===== 登录 / 支付 / 账户 =====
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipaydns.com
+DOMAIN-SUFFIX,mybank.cn
+
+# ===== 阿里云基础设施（1688 强依赖）=====
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,aliyuncs.com
+
+# ===== 风控 / 日志 / 基础能力 =====
+DOMAIN-SUFFIX,aliapp.org
+DOMAIN-SUFFIX,taobao.net
+DOMAIN-SUFFIX,taobao.org
