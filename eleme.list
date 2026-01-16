@@ -23,7 +23,3 @@ DOMAIN-SUFFIX,elemeimg.com
 # ===== 推送 / 日志 / 风控 =====
 DOMAIN-SUFFIX,eleme.cn
 DOMAIN-SUFFIX,eleme.net
-
-# ===== 必要基础设施（饿了么依赖）=====
-DOMAIN-SUFFIX,aliyun.com
-DOMAIN-SUFFIX,aliyuncs.com
