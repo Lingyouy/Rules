@@ -1,0 +1,31 @@
+# ==================================================
+# Alipay 纯净分流规则（仅支付宝）
+# 不包含：淘宝 / 天猫 / 1688 / 饿了么
+# 适用于：Egern / Loon / Clash / Surge
+# 策略建议：DIRECT（国内直连）
+# ==================================================
+
+# ===== 支付宝核心 =====
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipaydns.com
+DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,alipay.net
+
+# ===== 支付宝 App / 接口 =====
+DOMAIN-SUFFIX,mclient.alipay.com
+DOMAIN-SUFFIX,clientgw.alipay.com
+DOMAIN-SUFFIX,openapi.alipay.com
+DOMAIN-SUFFIX,intl.alipay.com
+
+# ===== 账户 / 银行体系 =====
+DOMAIN-SUFFIX,mybank.cn
+DOMAIN-SUFFIX,antfin.com
+DOMAIN-SUFFIX,antgroup.com
+
+# ===== 风控 / 日志 / 安全 =====
+DOMAIN-SUFFIX,alipaydev.com
+DOMAIN-SUFFIX,alipaycloud.com
+
+# ===== 必要基础设施（支付宝专用）=====
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,aliyuncs.com
