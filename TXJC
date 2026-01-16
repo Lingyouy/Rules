@@ -1,0 +1,41 @@
+# ==================================================
+# Alibaba Base Infrastructure Rules
+# 阿里系基础能力 / 基础设施 通用分流规则
+#
+# 来源整合：
+# - Taobao.list
+# - 1688.list
+# - Alipay.list
+# - Eleme.list
+#
+# 特点：
+# - 去业务化
+# - 去电商属性
+# - 去支付业务逻辑
+# - 仅保留底层公共能力
+#
+# 适用于：Egern / Loon / Clash / Surge
+# 策略建议：DIRECT（国内直连）
+# ==================================================
+
+# ===== 阿里集团基础域 =====
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,alibaba-inc.com
+DOMAIN-SUFFIX,alibaba.net
+DOMAIN-SUFFIX,alibaba.cn
+
+# ===== 阿里云基础设施 =====
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,aliyuncs.com
+
+# ===== 通用 App 能力 / SDK =====
+DOMAIN-SUFFIX,aliapp.org
+DOMAIN-SUFFIX,alibabausercontent.com
+
+# ===== 日志 / 统计 / 风控 =====
+DOMAIN-SUFFIX,mmstat.com
+
+# ===== CDN / 通用资源 =====
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,aliimg.com
+DOMAIN-SUFFIX,taobaocdn.com
