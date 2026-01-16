@@ -1,0 +1,55 @@
+# ==================================================
+# Taobao / Tmall / Alibaba 全量合并分流规则
+# 适用于：Egern / Loon / Clash / Surge
+# 策略建议：DIRECT（直连 / 国内）
+# ==================================================
+
+# ===== 淘宝 / 天猫 核心 =====
+DOMAIN-SUFFIX,taobao.com
+DOMAIN-SUFFIX,tb.cn
+DOMAIN-SUFFIX,tburl.cn
+DOMAIN-SUFFIX,tmall.com
+DOMAIN-SUFFIX,tmall.hk
+DOMAIN-SUFFIX,taobao.hk
+DOMAIN-SUFFIX,tmallglobal.com
+DOMAIN-SUFFIX,tmall.com.hk
+
+# ===== 淘宝 App / 无线端 =====
+DOMAIN-SUFFIX,m.taobao.com
+DOMAIN-SUFFIX,acs.m.taobao.com
+DOMAIN-SUFFIX,gw.alicdn.com
+DOMAIN-SUFFIX,h5api.m.taobao.com
+DOMAIN-SUFFIX,trade-acs.m.taobao.com
+DOMAIN-SUFFIX,api.m.taobao.com
+DOMAIN-SUFFIX,err.taobao.com
+DOMAIN-SUFFIX,log.mmstat.com
+
+# ===== 阿里 CDN / 静态资源 =====
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,alibabausercontent.com
+DOMAIN-SUFFIX,mmstat.com
+DOMAIN-SUFFIX,aliimg.com
+DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,aliapp.org
+
+# ===== 支付 / 登录 / 账户 =====
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipaydns.com
+DOMAIN-SUFFIX,mybank.cn
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,aliyuncs.com
+
+# ===== 推送 / 风控 / 基础设施 =====
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,alibaba-inc.com
+DOMAIN-SUFFIX,alibaba.net
+DOMAIN-SUFFIX,taobao.org
+DOMAIN-SUFFIX,taobaocdn.com
+DOMAIN-SUFFIX,taobao.net
+
+# ===== 关联但淘宝强依赖 =====
+DOMAIN-SUFFIX,ele.me
+DOMAIN-SUFFIX,eleme.io
+DOMAIN-SUFFIX,alihealth.cn
+DOMAIN-SUFFIX,alitrip.com
+DOMAIN-SUFFIX,fliggy.com
