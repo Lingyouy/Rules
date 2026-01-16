@@ -23,20 +23,6 @@ DOMAIN-SUFFIX,trade-acs.m.taobao.com
 DOMAIN-SUFFIX,api.m.taobao.com
 DOMAIN-SUFFIX,err.taobao.com
 
-# ===== 图片 / CDN / 静态资源 =====
-DOMAIN-SUFFIX,alicdn.com
-DOMAIN-SUFFIX,aliimg.com
-DOMAIN-SUFFIX,alibabausercontent.com
-DOMAIN-SUFFIX,taobaocdn.com
-
 # ===== 日志 / 统计 / 风控 =====
-DOMAIN-SUFFIX,mmstat.com
 DOMAIN-SUFFIX,taobao.net
 DOMAIN-SUFFIX,taobao.org
-
-# ===== 阿里基础能力（淘宝必需）=====
-DOMAIN-SUFFIX,alibaba-inc.com
-DOMAIN-SUFFIX,alibaba.net
-DOMAIN-SUFFIX,aliapp.org
-DOMAIN-SUFFIX,aliyun.com
-DOMAIN-SUFFIX,aliyuncs.com
