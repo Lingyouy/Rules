@@ -1,0 +1,61 @@
+# =====================================
+# DeepSeek All-in-One Rules
+# Author: YourName
+# Update: 2026-01
+# Description: DeepSeek Full Coverage
+# =====================================
+
+# ========= Core Domains =========
+DOMAIN,deepseek.com
+DOMAIN,www.deepseek.com
+DOMAIN,chat.deepseek.com
+DOMAIN,api.deepseek.com
+DOMAIN,platform.deepseek.com
+
+# ========= AI / API =========
+DOMAIN,api.deepseek.ai
+DOMAIN,platform.deepseek.ai
+
+# ========= Subdomain Wildcard =========
+DOMAIN-SUFFIX,deepseek.com
+DOMAIN-SUFFIX,deepseek.ai
+
+# ========= Static / Assets =========
+DOMAIN,static.deepseek.com
+DOMAIN,assets.deepseek.com
+DOMAIN,cdn.deepseek.com
+
+# ========= Keyword Fallback =========
+DOMAIN-KEYWORD,deepseek
+
+# ========= CDN / Infra =========
+# Cloudflare
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,cloudflare.net
+
+# Alibaba Cloud
+DOMAIN-SUFFIX,aliyuncs.com
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,aliyun.com
+
+# ByteDance / Volcengine
+DOMAIN-SUFFIX,bytecdn.com
+DOMAIN-SUFFIX,volces.com
+
+# HTTPS / Cert
+DOMAIN-SUFFIX,letsencrypt.org
+
+# ========= Regex (Anti-Leak) =========
+# DeepSeek full wildcard
+DOMAIN-REGEX,^([a-zA-Z0-9-]+\.)*deepseek\.(com|ai)$
+
+# API / Chat / Platform variants
+DOMAIN-REGEX,^api\..*deepseek\.(com|ai)$
+DOMAIN-REGEX,^chat\..*deepseek\.(com|ai)$
+DOMAIN-REGEX,^platform\..*deepseek\.(com|ai)$
+
+# Static / CDN naming
+DOMAIN-REGEX,^(static|assets|cdn)\..*deepseek\.(com|ai)$
+
+# Ultimate fallback (last line)
+DOMAIN-REGEX,.*deepseek.*
