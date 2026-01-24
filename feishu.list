@@ -1,0 +1,76 @@
+# =====================================
+# Feishu / Lark All-in-One Rules
+# Author: YourName
+# Update: 2026-01
+# Description: Full Coverage RuleSet
+# =====================================
+
+# ========= Core Domains =========
+DOMAIN,feishu.cn
+DOMAIN,www.feishu.cn
+DOMAIN,open.feishu.cn
+DOMAIN,docs.feishu.cn
+DOMAIN,calendar.feishu.cn
+DOMAIN,meeting.feishu.cn
+DOMAIN,vc.feishu.cn
+DOMAIN,mail.feishu.cn
+DOMAIN,admin.feishu.cn
+DOMAIN,passport.feishu.cn
+
+# ========= Lark (International) =========
+DOMAIN,larksuite.com
+DOMAIN,www.larksuite.com
+DOMAIN,open.larksuite.com
+DOMAIN,docs.larksuite.com
+DOMAIN,calendar.larksuite.com
+DOMAIN,meeting.larksuite.com
+DOMAIN,vc.larksuite.com
+DOMAIN,mail.larksuite.com
+DOMAIN,admin.larksuite.com
+DOMAIN,passport.larksuite.com
+
+# ========= Wildcard =========
+DOMAIN-SUFFIX,feishu.cn
+DOMAIN-SUFFIX,larksuite.com
+
+# ========= API / Open Platform =========
+DOMAIN-SUFFIX,feishuapi.com
+DOMAIN-SUFFIX,larkoffice.com
+
+# ========= Static / Assets =========
+DOMAIN-SUFFIX,feishucdn.com
+DOMAIN-SUFFIX,larksuitecdn.com
+
+# ========= Audio / Video / RTC =========
+DOMAIN-SUFFIX,feishuvc.com
+DOMAIN-SUFFIX,larkvc.com
+
+# ========= IM / Push =========
+DOMAIN-SUFFIX,feishumsg.com
+DOMAIN-SUFFIX,larkmsg.com
+
+# ========= Object Storage =========
+DOMAIN-SUFFIX,feishuobj.com
+DOMAIN-SUFFIX,larkobj.com
+
+# ========= ByteDance Infra =========
+DOMAIN-SUFFIX,bytecdn.com
+DOMAIN-SUFFIX,bytedance.com
+DOMAIN-SUFFIX,volces.com
+
+# ========= Cloud / CDN =========
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,cloudflare.net
+
+# ========= Keyword Fallback =========
+DOMAIN-KEYWORD,feishu
+DOMAIN-KEYWORD,lark
+
+# ========= Regex (Anti-Leak) =========
+# Feishu
+DOMAIN-REGEX,^([a-zA-Z0-9-]+\.)*feishu\.cn$
+DOMAIN-REGEX,.*feishu.*
+
+# Lark
+DOMAIN-REGEX,^([a-zA-Z0-9-]+\.)*larksuite\.com$
+DOMAIN-REGEX,.*lark.*
