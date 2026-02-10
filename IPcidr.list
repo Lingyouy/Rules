@@ -1,0 +1,33 @@
+# ===============================
+# Local / Private / Reserved IPs
+# ===============================
+
+# Loopback（本机回环）
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,::1/128,DIRECT
+
+# Private LAN（内网地址）
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT
+
+# Link-Local（链路本地）
+- IP-CIDR,169.254.0.0/16,DIRECT
+- IP-CIDR,fe80::/10,DIRECT
+
+# Multicast（多播地址）
+- IP-CIDR,224.0.0.0/4,DIRECT
+- IP-CIDR,ff00::/8,DIRECT
+
+# Reserved / Special Use（保留 & 特殊用途）
+- IP-CIDR,0.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT      # CGNAT
+- IP-CIDR,192.0.0.0/24,DIRECT
+- IP-CIDR,192.0.2.0/24,DIRECT       # TEST-NET-1
+- IP-CIDR,198.18.0.0/15,DIRECT      # Network Benchmark
+- IP-CIDR,198.51.100.0/24,DIRECT    # TEST-NET-2
+- IP-CIDR,203.0.113.0/24,DIRECT     # TEST-NET-3
+- IP-CIDR,240.0.0.0/4,DIRECT
+
+# Broadcast
+- IP-CIDR,255.255.255.255/32,DIRECT
