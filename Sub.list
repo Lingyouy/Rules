@@ -1,0 +1,60 @@
+# ===== SubStore 核心 =====
+DOMAIN,sub.store
+DOMAIN,sub-store.vercel.app
+DOMAIN,sub-store-api.vercel.app
+
+# ===== 常见订阅服务器 =====
+DOMAIN-SUFFIX,subconverter.com
+DOMAIN-SUFFIX,subconverter.org
+DOMAIN-SUFFIX,subconverter.do
+DOMAIN-SUFFIX,subapi.cc
+DOMAIN-SUFFIX,subapi.dev
+DOMAIN-SUFFIX,subapi.org
+
+# ===== GitHub（订阅托管）=====
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,github.io
+DOMAIN-SUFFIX,raw.githubusercontent.com
+DOMAIN-SUFFIX,codeload.github.com
+DOMAIN-SUFFIX,objects.githubusercontent.com
+
+# ===== Vercel =====
+DOMAIN-SUFFIX,vercel.app
+DOMAIN-SUFFIX,vercel.dev
+
+# ===== Cloudflare =====
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,cloudflare-dns.com
+DOMAIN-SUFFIX,workers.dev
+
+# ===== CDN =====
+DOMAIN-SUFFIX,jsdelivr.net
+DOMAIN-SUFFIX,cdn.jsdelivr.net
+
+# ===== Telegram 订阅分发 =====
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,telegram.me
+
+# ===== 常见订阅面板 =====
+DOMAIN-SUFFIX,v2board.com
+DOMAIN-SUFFIX,sspanel.net
+DOMAIN-SUFFIX,sspanel.org
+
+# ===== API服务 =====
+DOMAIN-SUFFIX,api.github.com
+DOMAIN-SUFFIX,api.vercel.com
+DOMAIN-SUFFIX,api.cloudflare.com
+
+# ===== DNS =====
+DOMAIN-SUFFIX,dns.google
+DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com
+
+# ===== 代理更新 =====
+DOMAIN-SUFFIX,fastly.net
+DOMAIN-SUFFIX,akamai.net
+DOMAIN-SUFFIX,akamaihd.net
+DOMAIN-SUFFIX,edgesuite.net
+DOMAIN-SUFFIX,edgekey.net
