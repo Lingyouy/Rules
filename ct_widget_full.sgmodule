@@ -1,0 +1,9 @@
+#!name=中国电信小组件
+#!desc=显示话费 流量 语音
+#!system=ios
+
+scriptings:
+  - generic:
+      name: 中国电信
+      script_url: https://raw.githubusercontent.com/Lingyouy/Rules/main/ct_widget_full.js
+      update_interval: 900
