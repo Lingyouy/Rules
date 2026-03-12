@@ -1,21 +1,13 @@
 export default async function(ctx) {
 
   const API = "https://api.qqsuu.cn/api/dm-oilprice";
-  const CACHE_KEY = "egern_oil_price_cache";
-  const CACHE_TIME = 3600; // 1小时缓存
+  const CACHE_KEY = "oil_price_cache";
+  const CACHE_TIME = 3600;
 
-  let oil92 = "--";
-  let oil95 = "--";
-  let oil98 = "--";
-  let oil0 = "--";
-  let province = "China";
+  const now = Date.now();
+  let cache = await ctx.storage.get(CACHE_KEY);
 
-  const now = Math.floor(Date.now() / 1000);
-
-  // 读取缓存
-  const cache = await ctx.storage.get(CACHE_KEY);
-
-  if (cache && now - cache.time < CACHE_TIME) {
+  if (cache && now - cache.time < CACHE_TIME * 1000) {
     return render(cache.data);
   }
 
@@ -27,7 +19,7 @@ export default async function(ctx) {
     if (json && json.data) {
 
       const data = {
-        province: json.data.province || "China",
+        province: json.data.province || "中国",
         oil92: json.data.oil92,
         oil95: json.data.oil95,
         oil98: json.data.oil98,
@@ -36,35 +28,32 @@ export default async function(ctx) {
 
       await ctx.storage.set(CACHE_KEY, {
         time: now,
-        data: data
+        data
       });
 
       return render(data);
 
     }
 
-  } catch (e) {
+  } catch (e) {}
 
-    if (cache) {
-      return render(cache.data);
-    }
-
+  if (cache) {
+    return render(cache.data);
   }
 
   return render({
-    province: province,
-    oil92: oil92,
-    oil95: oil95,
-    oil98: oil98,
-    oil0: oil0
+    province: "中国",
+    oil92: "--",
+    oil95: "--",
+    oil98: "--",
+    oil0: "--"
   });
 
-
-  function render(data) {
+  function render(d) {
 
     return {
       type: "widget",
-      padding: 14,
+      padding: 12,
       backgroundColor: "#1c1c1e",
       children: [
 
@@ -77,27 +66,22 @@ export default async function(ctx) {
 
         {
           type: "text",
-          text: data.province,
+          text: d.province,
           font: { size: "caption1" },
           textColor: "#aaaaaa"
         },
 
-        {
-          type: "spacer",
-          size: 6
-        },
-
-        priceLine("92#", data.oil92, "#34C759"),
-        priceLine("95#", data.oil95, "#0A84FF"),
-        priceLine("98#", data.oil98, "#FFD60A"),
-        priceLine("0#", data.oil0, "#ffffff")
+        line("92#", d.oil92),
+        line("95#", d.oil95),
+        line("98#", d.oil98),
+        line("0#", d.oil0)
 
       ]
     };
+
   }
 
-
-  function priceLine(name, price, color) {
+  function line(name, price) {
 
     return {
       type: "hstack",
@@ -106,13 +90,11 @@ export default async function(ctx) {
         {
           type: "text",
           text: name,
-          font: { size: "body", weight: "medium" },
-          textColor: color
+          font: { size: "body" },
+          textColor: "#0A84FF"
         },
 
-        {
-          type: "spacer"
-        },
+        { type: "spacer" },
 
         {
           type: "text",
