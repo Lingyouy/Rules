@@ -1,8 +1,12 @@
-/** * 万年历 - iOS 仿图定制自动更新版
+/** * 万年历 - 交互式周切换版
  */
 
 export default async function(ctx) {
-  // --- 1. 核心农历算法数据 ---
+  // --- 1. 获取点击偏移量 ---
+  // 如果点击了箭头，url 会带上参数，例如 ?weekOffset=1
+  const weekOffset = parseInt(ctx.query.weekOffset || 0);
+
+  // --- 2. 核心农历算法数据 ---
   const lunarInfo = [
     0x04bd8,0x04ae0,0x0a570,0x054d5,0x0d260,0x0d950,0x16554,0x056a0,0x09ad0,0x055d2,
     0x04ae0,0x0a5b6,0x0a4d0,0x0d250,0x1d255,0x0b540,0x0d6a0,0x0ada2,0x095b0,0x14977,
@@ -21,7 +25,7 @@ export default async function(ctx) {
     0x0b5a0,0x056d0,0x055b2,0x049b0,0x0a577,0x0a4b0,0x0aa50,0x1b255,0x06d20,0x0ada0
   ];
 
-  // --- 2. 辅助计算函数 ---
+  // --- 3. 辅助函数 ---
   function getLunarDate(dObj) {
     let baseDate = new Date(Date.UTC(1900, 0, 31));
     let objDate = new Date(Date.UTC(dObj.getFullYear(), dObj.getMonth(), dObj.getDate()));
@@ -35,7 +39,6 @@ export default async function(ctx) {
     };
     const leapMonth = (y) => lunarInfo[y-1900] & 0xf;
     const monthDays = (y, m) => (lunarInfo[y-1900] & (0x10000 >> m)) ? 30 : 29;
-
     for (y = 1900; y < 2050 && offset > 0; y++) { days = lYearDays(y); offset -= days; }
     if (offset < 0) { offset += days; y--; }
     let leap = leapMonth(y), isLeap = false;
@@ -66,14 +69,13 @@ export default async function(ctx) {
     return 1 + Math.ceil((firstThursday - target) / 604800000);
   }
 
-  // --- 3. 初始化当前日期与本周数据 ---
-  const now = new Date();
-  const todayDate = now.getDate();
-  const todayDay = now.getDay(); // 0是周日
+  // --- 4. 计算显示周的日期数据 ---
+  const realNow = new Date(); // 真实的今天
+  const displayNow = new Date(); // 用于计算显示日期的基准
+  displayNow.setDate(realNow.getDate() + (weekOffset * 7));
 
-  // 计算本周的起始日期（周日）
-  const startOfWeek = new Date(now);
-  startOfWeek.setDate(now.getDate() - todayDay);
+  const startOfWeek = new Date(displayNow);
+  startOfWeek.setDate(displayNow.getDate() - displayNow.getDay());
 
   const colors = {
     bg: '#000000',
@@ -84,20 +86,26 @@ export default async function(ctx) {
     dotPurple: '#BF5AF2'
   };
 
-  // --- 4. 构建 UI 组件 ---
+  // --- 5. 构建 UI 组件 ---
   
-  // 顶部标题
+  // 顶部标题 - 增加点击跳转逻辑
   const header = {
     type: 'stack',
     direction: 'row',
     alignItems: 'center',
     padding: [12, 16, 0, 16],
     children: [
-      { type: 'text', text: '〈', font: { size: 14 }, textColor: colors.textSub },
+      { 
+        type: 'text', text: '〈 ', font: { size: 16, weight: 'bold' }, textColor: colors.textSub,
+        url: `?weekOffset=${weekOffset - 1}` // 点击跳转上一周
+      },
       { type: 'spacer' },
-      { type: 'text', text: `${now.getFullYear()} / ${now.getMonth() + 1}`, font: { size: 18, weight: 'bold' }, textColor: colors.textMain },
+      { type: 'text', text: `${displayNow.getFullYear()} / ${displayNow.getMonth() + 1}`, font: { size: 18, weight: 'bold' }, textColor: colors.textMain },
       { type: 'spacer' },
-      { type: 'text', text: '〉', font: { size: 14 }, textColor: colors.textSub }
+      { 
+        type: 'text', text: ' 〉', font: { size: 16, weight: 'bold' }, textColor: colors.textSub,
+        url: `?weekOffset=${weekOffset + 1}` // 点击跳转下一周
+      }
     ]
   };
 
@@ -112,7 +120,7 @@ export default async function(ctx) {
     }))
   };
 
-  // 动态生成本周 7 天
+  // 日期行
   const daysRow = {
     type: 'stack',
     direction: 'row',
@@ -120,14 +128,11 @@ export default async function(ctx) {
     children: Array.from({ length: 7 }).map((_, i) => {
       const d = new Date(startOfWeek);
       d.setDate(startOfWeek.getDate() + i);
-      const isToday = d.toDateString() === now.toDateString();
+      const isToday = d.toDateString() === realNow.toDateString(); // 只有真正的今天才红圈
       const l = getLunarDate(d);
       
       return {
-        type: 'stack',
-        flex: 1,
-        direction: 'column',
-        alignItems: 'center',
+        type: 'stack', flex: 1, direction: 'column', alignItems: 'center',
         children: [
           {
             type: 'stack',
@@ -143,7 +148,6 @@ export default async function(ctx) {
             font: { size: 9 }, 
             textColor: isToday ? colors.todayRed : colors.textSub 
           },
-          // 模拟图片中的紫色点（如果是初一或者特定日子显示）
           {
             type: 'stack', direction: 'row', gap: 2,
             children: (l.day % 7 === 0) ? [
@@ -156,10 +160,10 @@ export default async function(ctx) {
     })
   };
 
-  // 底部详情
-  const lToday = getLunarDate(now);
-  const gzYear = Gan[(lToday.year - 4) % 10] + Zhi[(lToday.year - 4) % 12];
-  const sx = Shu[(lToday.year - 4) % 12];
+  // 底部详情 (显示当前选中周的第一天的信息)
+  const lFirst = getLunarDate(displayNow);
+  const gzYear = Gan[(lFirst.year - 4) % 10] + Zhi[(lFirst.year - 4) % 12];
+  const sx = Shu[(lFirst.year - 4) % 12];
   
   const footer = {
     type: 'stack',
@@ -170,8 +174,8 @@ export default async function(ctx) {
       { type: 'spacer', length: 8 },
       { 
         type: 'text', 
-        text: `${now.getMonth()+1}月${now.getDate()}日 第${getWeekNumber(now)}周 ${gzYear}(${sx})年 ${lunarMonths[lToday.month-1]}${lunarDaysStr[lToday.day-1]}`, 
-        font: { size: 12 }, 
+        text: `${displayNow.getMonth()+1}月${displayNow.getDate()}日 第${getWeekNumber(displayNow)}周 ${gzYear}(${sx})年 ${lunarMonths[lFirst.month-1]}${lunarDaysStr[lFirst.day-1]}`, 
+        font: { size: 11 }, 
         textColor: colors.textMain 
       }
     ]
@@ -180,6 +184,8 @@ export default async function(ctx) {
   return {
     type: 'widget',
     backgroundColor: colors.bg,
+    // 点击非箭头区域重置回到今天
+    url: weekOffset !== 0 ? `?weekOffset=0` : undefined, 
     children: [
       {
         type: 'stack',
