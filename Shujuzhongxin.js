@@ -1,7 +1,8 @@
 export default async function(ctx) {
 
-  // ========= 环境变量 =========
-  // 小组件里添加：
+  // =========================
+  // 环境变量
+  // =========================
   // 名称：POLICY
   // 值：你的策略组名字
   // 例如：
@@ -39,7 +40,9 @@ export default async function(ctx) {
   const BASE_UA =
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Mobile/15E148 Safari/604.1";
 
-  // ========= 请求函数 =========
+  // =========================
+  // 通用请求
+  // =========================
 
   async function get(url, headers, useProxy = true) {
 
@@ -49,12 +52,12 @@ export default async function(ctx) {
 
     if (headers) opts.headers = headers;
 
-    // 只有开启代理才走策略组
     if (useProxy && policy && policy !== "DIRECT") {
       opts.policy = policy;
     }
 
     const res = await ctx.http.get(url, opts);
+
     return await res.text();
   }
 
@@ -72,6 +75,7 @@ export default async function(ctx) {
     }
 
     const res = await ctx.http.post(url, opts);
+
     return await res.text();
   }
 
@@ -105,9 +109,12 @@ export default async function(ctx) {
     return Number.isFinite(n) ? Math.round(n) : null;
   }
 
-  // ========= ChatGPT =========
+  // =========================
+  // ChatGPT
+  // =========================
 
   async function checkChatGPT() {
+
     try {
 
       const headRes = await getRaw(
@@ -144,6 +151,7 @@ export default async function(ctx) {
       const appAccessible = !!iosBody && !appBlocked;
 
       if (!webAccessible && !appAccessible) return "Cross";
+
       if (appAccessible && !webAccessible) return "APP";
 
       if (webAccessible && appAccessible) {
@@ -170,7 +178,9 @@ export default async function(ctx) {
     }
   }
 
-  // ========= Gemini =========
+  // =========================
+  // Gemini
+  // =========================
 
   async function checkGemini() {
 
@@ -193,6 +203,7 @@ export default async function(ctx) {
       if (!txt) return "Cross";
 
       let m = txt.match(/"countryCode"\s*:\s*"([A-Z]{2})"/i);
+
       if (m && m[1]) return m[1].toUpperCase();
 
       return "OK";
@@ -202,7 +213,9 @@ export default async function(ctx) {
     }
   }
 
-  // ========= YouTube =========
+  // =========================
+  // YouTube
+  // =========================
 
   async function checkYouTube() {
 
@@ -251,7 +264,9 @@ export default async function(ctx) {
     }
   }
 
-  // ========= Netflix =========
+  // =========================
+  // Netflix
+  // =========================
 
   async function checkNetflix() {
 
@@ -308,7 +323,9 @@ export default async function(ctx) {
     }
   }
 
-  // ========= TikTok =========
+  // =========================
+  // TikTok
+  // =========================
 
   async function checkTikTok() {
 
@@ -336,7 +353,9 @@ export default async function(ctx) {
     }
   }
 
-  // ========= 本地IP（强制直连） =========
+  // =========================
+  // 本地IP（强制直连）
+  // =========================
 
   let lIp = "获取失败";
   let lLoc = "未知位置";
@@ -344,15 +363,18 @@ export default async function(ctx) {
 
   try {
 
-    const res = await ctx.http.get(
+    const lRes = await ctx.http.get(
       'https://myip.ipip.net/json',
       {
+        headers: {
+          'User-Agent': 'Mozilla/5.0'
+        },
         timeout: 3000,
         policy: "DIRECT"
       }
     );
 
-    const body = JSON.parse(await res.text());
+    const body = JSON.parse(await lRes.text());
 
     if (body?.data) {
 
@@ -360,17 +382,31 @@ export default async function(ctx) {
 
       const locArr = body.data.location || [];
 
+      const country = locArr[0] || "";
+
+      const getFlagEmoji = (country) => {
+        if (country.includes("中国")) return "🇨🇳";
+        if (country.includes("日本")) return "🇯🇵";
+        if (country.includes("美国")) return "🇺🇸";
+        if (country.includes("香港")) return "🇭🇰";
+        if (country.includes("台湾")) return "🇹🇼";
+        if (country.includes("澳门")) return "🇲🇴";
+        if (country.includes("新加坡")) return "🇸🇬";
+        if (country.includes("韩国")) return "🇰🇷";
+        return "📍";
+      };
+
       lLoc =
-        `${locArr[1] || ""} ${locArr[2] || ""}`.trim();
+        `${getFlagEmoji(country)} ${locArr[1] || ""} ${locArr[2] || ""}`.trim();
 
-      lIsp =
-        locArr[4] || locArr[3] || "未知";
-
+      lIsp = locArr[4] || locArr[3] || "未知";
     }
 
   } catch (e) {}
 
-  // ========= 落地IP（走代理） =========
+  // =========================
+  // 落地IP（走策略组）
+  // =========================
 
   let nIp = "获取失败";
   let nLoc = "未知位置";
@@ -411,7 +447,9 @@ export default async function(ctx) {
 
   } catch (e) {}
 
-  // ========= 解锁检测 =========
+  // =========================
+  // 解锁
+  // =========================
 
   const [
     gptStatus,
@@ -427,7 +465,9 @@ export default async function(ctx) {
     checkTikTok()
   ]);
 
-  // ========= UI =========
+  // =========================
+  // UI
+  // =========================
 
   function UnlockRow(name, status) {
 
@@ -499,7 +539,7 @@ export default async function(ctx) {
         ]
       },
 
-      // 本地
+      // 本地信息
       {
         type: 'text',
         text: `本地IP：${lIp}`,
@@ -516,12 +556,12 @@ export default async function(ctx) {
 
       {
         type: 'text',
-        text: `运营商：${lIsp}`,
+        text: `本地运营商：${lIsp}`,
         font: { size: 13 },
         textColor: C_MAIN
       },
 
-      // 落地
+      // 落地信息
       {
         type: 'text',
         text: `落地IP：${nIp}`,
