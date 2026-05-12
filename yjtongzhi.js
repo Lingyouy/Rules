@@ -4,7 +4,7 @@
 // 每天 9 点运行即可
 // ========================================
 
-const API = "https://api.qqsuu.cn/api/dm-oilprice?prov=浙江";
+const API = "83d3b1578beaca97c32d0a1e7c4159e5";
 
 const ICON_UP = "📈";
 const ICON_DOWN = "📉";
