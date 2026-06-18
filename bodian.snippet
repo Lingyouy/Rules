@@ -1,0 +1,11 @@
+[mitm]
+# 允许解密波点音乐的核心API接口域名
+hostname = bd-api.kuwo.cn
+
+[rewrite_local]
+# 拦截进入福利、签到、任务或金币页面时的动态加密包，自动保存可用的 payload 与请求 URL
+^https:\/\/bd-api\.kuwo\.cn\/api\/service\/.*(scene|vip|user|coin|task) url script-request-header https://raw.githubusercontent.com/YourUsername/scripts/main/bodian_coin.js
+
+[task_local]
+# 每天早上 8:30 自动利用最新的缓存凭据运行领金币/签到任务
+30 8 * * * https://raw.githubusercontent.com/YourUsername/scripts/main/bodian_coin.js, tag=波点音乐自动领金币, enabled=true
